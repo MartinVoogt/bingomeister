@@ -1,0 +1,9 @@
+.bingo .generator .action { 
+	display: flex;
+	justify-content: center;
+	margin-top: $offset;
+
+	* + * {
+		margin-left: calc(#{$offset} / 2);
+	}
+}

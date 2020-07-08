@@ -1,0 +1,67 @@
+.bingo .list { 
+	$ball: 30px;
+	min-height: 50vh; 
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: $offset;
+	
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		max-width: calc((5 * #{$ball}) + (4 * 10px));
+
+		li {
+			margin-top: 10px;
+			margin-left: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			div {
+				width: $ball;
+				height: $ball;
+				background: rgba(0,0,0,.2); 
+				font-size: 18px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				color: #FFF;
+				font-weight: 900;
+
+				&[data-latest="true"]
+				{
+					background: $color-primary;
+					animation:bounce .5s forwards; 
+				}
+			}
+
+			&:nth-child(5n+1) {
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+@keyframes bounce {
+	0% {
+		transform: scale(1);
+	}
+	10% {
+		transform: scale(1.2); 
+	}
+	30% {
+		transform: scale(.8);
+	}
+	50% {
+		transform: scale(1.4);
+	}
+
+	75% {
+		transform: scale(.9);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
